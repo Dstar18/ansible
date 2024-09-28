@@ -1,8 +1,11 @@
 ---
 - name: Deploy Git repository to server
   hosts: webservers
+  become: yes
   tasks:
     - name: deploy project ansible
       git:
+        repo: "https://github.com/Dstar18/ansible.git"
         dest: "/var/www/html/ansible"
+        version: main # branch name
         force: yes
