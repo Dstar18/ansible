@@ -1,12 +1,15 @@
 ---
 - name: Auto Deploy Server
   hosts: [webservers]
-  
+  become: yes
+
   vars:
     repo: "https://github.com/Dstar18/ansible.git"
     dest: "/var/www/html/ansiblev2/"
   tasks:
-  - name: deploy code from git
+  - name: deploy project ansible
     git:
       repo: "{{ repo }}"
       dest: "{{ dest }}"
+      version: main
+      force: yes
