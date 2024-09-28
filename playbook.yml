@@ -1,0 +1,8 @@
+---
+- name: Deploy Git repository to server
+  hosts: webservers
+  tasks:
+    - name: deploy project ansible
+      git:
+        dest: "/var/www/html/ansible"
+        force: yes
