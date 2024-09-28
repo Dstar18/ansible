@@ -1,12 +1,13 @@
 ---
-- name: Deploy Git repository to server
-  hosts: vpsdedi
-  become: yes
+- name: Auto Deploy Server
+  hosts: [webservers]
+  remote_user: root
 
+  vars:
+    repo: "https://github.com/Dstar18/ansible.git"
+    dest: "/var/www/html/ansible"
   tasks:
-    - name: deploy project ansible
-      git:
-        repo: "https://github.com/Dstar18/ansible.git"
-        dest: "/var/www/html/ansible"
-        version: main # branch name
-        force: yes
+  - name: deploy code from git
+    git:
+      repo: "{{ repo }}"
+      dest: "{{ dest }}"
