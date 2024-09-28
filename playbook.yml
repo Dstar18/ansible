@@ -1,7 +1,7 @@
 ---
 - name: Auto Deploy Server
   hosts: [webservers]
-  remote_user: root
+  remote_user: dedy
 
   vars:
     repo: "https://github.com/Dstar18/ansible.git"
