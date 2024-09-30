@@ -3,8 +3,9 @@
   hosts: [webservers]
 
   vars:
-    repo: "https://github.com/Dstar18/ansible.git"
+    repo: "https://github.com/Dstar18/ansible.git/tree/main/master"
     dest: "/var/www/html/ansiblev3/"
+
   tasks:
   - name: deploy project ansible
     git:
