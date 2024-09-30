@@ -3,7 +3,7 @@
   hosts: [webservers]
 
   vars:
-    repo: "https://github.com/Dstar18/ansible/tree/main/master"
+    repo: "https://github.com/Dstar18/ansible.git"
     dest: "/var/www/html/ansiblev3/"
 
   tasks:
